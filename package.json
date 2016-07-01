@@ -1,0 +1,24 @@
+{
+  "name": "simple-form",
+  "version": "1.0.0",
+  "description": "A simple form application utilising React and Codeigniter MVC framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unuigbee/simple-form.git"
+  },
+  "keywords": [
+    "React",
+    "Codeigniter",
+    "MVC"
+  ],
+  "author": "Emmanuel Unuigbe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unuigbee/simple-form/issues"
+  },
+  "homepage": "https://github.com/unuigbee/simple-form#readme"
+}
