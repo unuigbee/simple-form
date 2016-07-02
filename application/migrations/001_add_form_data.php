@@ -28,8 +28,8 @@ class Migration_Add_Form_data extends CI_Migration {
                       'default' => ''
               ),
               'telephone' => array(
-                      'type' => 'INT',
-                      'constraint' => '11'
+                      'type' => 'VARCHAR',
+                      'constraint' => '50'
               ),
               'gender' => array(
                       'type' => 'VARCHAR',
