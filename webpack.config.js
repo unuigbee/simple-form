@@ -1,8 +1,8 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// The plugin configuration uses /app/index.html as a template and creates a brand new index.html file
-// The new index.html file gets placed in the /dist folder and is injected a script
-// in the <body> of the index.html file referencing our index_bundle.js.
+// The plugin configuration sets /app/index.html as a template and creates a brand new index.html
+// file in the /dist folder.
+// The new index.html file is injected a script tag referencing our index_bundle.js in the <body> tag
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -10,7 +10,7 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    // We first tell Webpack where the entry point for our app is located
+    // We first tell Webpack where the entry point/code for our app is located
   entry: [
     './app/index.js',
   ],
@@ -21,12 +21,12 @@ module.exports = {
   },
   module: {
     // We then add our babel-loader for transforming our JSX syntax and es2015 code into
-    // es5 Javascript code. We also exclude the node_modules from undergoing these transformations
+    // es5 code. We also exclude contents of /node_modules from undergoing these transformations.
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        // Looks at .babelrc file for each transformation to make on our js code
+        // Looks at .babelrc file for each transformation to make on our JS code
         // Which includes React(jsx) and es2015 syntax
         loader: 'babel-loader',
       },
