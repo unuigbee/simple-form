@@ -5,3 +5,16 @@ node_modules
 logs
 *.log
 npm-debug.log*
+
+# CodeIgniter 
+.DS_Store
+.htaccess
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+**/config/development/
+application/config/database.php
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
