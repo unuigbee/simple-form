@@ -4,7 +4,7 @@ const CommentSection = (props) => {
   return (
     <section>
       <header>
-// Here we access the properties passed down from our FormContainer component
+{/* Here we access the properties passed down from our FormContainer component*/}
         <p>{props.headerTitle}</p>
       </header>
       <textarea name="comments" cols="100" rows="4" defaultValue="Enter your comments...">
