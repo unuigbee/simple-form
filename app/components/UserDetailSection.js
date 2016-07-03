@@ -1,6 +1,9 @@
 // React namespace is neccessary to import because the transformed JSX syntax into JS code by Babel
 // uses the React namespace to create these elements e.g. React.createElement(element, children, ..)
 import React, { PropTypes } from 'react';
+// import the Radio Group module for managing radio groups
+import { RadioGroup, Radio } from 'react-radio-group';
+import ToggleDisplay from 'react-toggle-display';
 
 const UserDetailSection = (props) => {
   return (
@@ -8,25 +11,57 @@ const UserDetailSection = (props) => {
       <header>
         <p>{props.headerTitle}</p>
       </header>
-      <fieldset>
-        <label>Firstname:
-          <input type="text" name="Firstname" placeholder="e.g. John" />
-        </label>
-        <label>Surname:
-          <input type="text" name="Surname" placeholder="e.g. Smith" />
-        </label>
-        <label>Email Address:
-          <input type="email" name="email" placeholder="e.g. John@gmail.com" />
-        </label>
-        <label>Telephone Nom.:
-          <input type="text" name="telephone" placeholder="e.g. 0207 8733 825" />
-        </label>
-        <label>Gender:
-          <input type="radio" name="genre" value="male" /> Male
-          <input type="radio" name="genre" value="female" /> Female
-        </label>
-      </fieldset>
-      <input type="submit" value={props.buttonText} />
+      <ToggleDisplay show={props.show}>
+        <fieldset>
+          <label>Firstname:
+            <input
+              type="text"
+              name="firstname"
+              value={props.fieldValues.firstname}
+              onChange={props.onFieldChange}
+            />
+          </label>
+          <label>Surname:
+            <input
+              type="text"
+              name="surname"
+              value={props.fieldValues.surname}
+              onChange={props.onFieldChange}
+            />
+          </label>
+          <label>Email Address:
+            <input
+              type="email"
+              name="email"
+              value={props.fieldValues.email}
+              onChange={props.onFieldChange}
+            />
+          </label>
+          <label>Telephone Nom.:
+            <input
+              type="text" name="telephone"
+              onChange={props.onFieldChange}
+              value={props.fieldValues.telephone}
+            />
+          </label>
+          <label>Gender:
+  {/* We use RadioGroup component to easily set checked value and retrieve selected value from onChange events*/ }
+            <RadioGroup
+              name="gender"
+              selectedValue={props.fieldValues.gender}
+              onChange={props.onFieldChange}
+            >
+              <label>
+                <Radio value="male" />Male
+              </label>
+              <label>
+                <Radio value="female" />Female
+              </label>
+            </RadioGroup>
+          </label>
+          <button type="button" onClick={props.onNextStep}> {props.buttonText} </button>
+        </fieldset>
+      </ToggleDisplay>
     </section>
   );
 };

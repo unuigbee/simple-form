@@ -1,15 +1,31 @@
 import React, { PropTypes } from 'react';
+import ToggleDisplay from 'react-toggle-display';
 
 const CommentSection = (props) => {
+  let buttonType;
+
+  if (props.onNextStep) {
+    buttonType = <button type="button" onClick={props.onNextStep}> {props.buttonText} </button>;
+  } else {
+    buttonType = <input type="submit" value={props.buttonText} />;
+  }
+
   return (
     <section>
       <header>
 {/* Here we access the properties passed down from our FormContainer component*/}
         <p>{props.headerTitle}</p>
       </header>
-      <textarea name="comments" cols="100" rows="4" defaultValue="Enter your comments...">
-      </textarea>
-      <input type="submit" value={props.buttonText} />
+      <ToggleDisplay show={props.show}>
+        <textarea
+          name={props.name}
+          cols="100"
+          rows="4" value={props.comments}
+          onChange={props.onFieldChange}
+        >
+        </textarea>
+        {buttonType}
+      </ToggleDisplay>
     </section>
   );
 };
@@ -17,5 +33,7 @@ const CommentSection = (props) => {
 CommentSection.propTypes = {
   headerTitle: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  comments: PropTypes.string.isRequired,
 };
 export default CommentSection;
