@@ -14,13 +14,13 @@ class Form_entry_model extends CI_Model {
   public function create() {
     // Here we get the current post data from the clients request and store it in an array
     $data = array(
-      'firstname' => $this->input->post('title'),
+      'firstname' => $this->input->post('firstname'),
       'surname' => $this->input->post('surname'),
       'email' => $this->input->post('email'),
       'telephone' => $this->input->post('telephone'),
       'gender' => $this->input->post('gender'),
       'comments' => $this->input->post('comments'),
-      'more_comments' => $this->input->post('more_comments')
+      'more_comments' => $this->input->post('morecomments')
     );
     // We then take data and pass it to CodeIgniter's query builder insert method in order to insert data into the
     // data_entry field
