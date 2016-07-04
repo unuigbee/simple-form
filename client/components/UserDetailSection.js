@@ -71,7 +71,7 @@ const UserDetailSection = (props) => {
                 className={styles.form_input}
                 type="text" name="dateofbirth"
                 onChange={props.onFieldChange}
-                value={props.fieldValues.telephone}
+                value={props.fieldValues.dateofbirth}
               />
             </label>
           </div>
