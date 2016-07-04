@@ -5,10 +5,11 @@ Includes examples creating components using es6 syntax, routing using React Rout
 
 ## Installation
 1. Clone the repository to your server web space 
-2. Import the sql schema script to install database 
+2. Import the [sql schema script](https://github.com/unuigbee/simple-form/blob/master/data_entry.sql) to install database 
 3. [Configure Codeigniter](http://www.codeigniter.com/user_guide/installation/index.html)
-4. run **npm install** at root of project to install client application
-5. run **npm start** to get webpack dev server running or **webpack-dev-server --host www.example.com --port 80** if you want some flexibility 
+4. Set Axios base url in [FormHelpers file](https://github.com/unuigbee/simple-form/blob/master/client/utils/FormSubmitHelper.js) e.g. ```axios.defaults.baseURL = 'http://www.example.com';```
+5. run **npm install** at root of project to install client application
+6. run **npm start** to get webpack dev server running or **webpack-dev-server --host www.example.com --port 80** if you want some flexibility 
 
 ## To Do
 - [ ] Add client side form validation

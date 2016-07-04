@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Results from '../components/Results';
-import formHelpers from '../utils/FormHelpers';
+import formSubmitHelpers from '../utils/FormSubmitHelper';
 
 export default class ResultsContainer extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class ResultsContainer extends Component {
   // Note: componentDidMount is called immediateley after the initial render of
   // our this ResultsContainer component
   componentDidMount() {
-    formHelpers.getUsers()
+    formSubmitHelpers.getUsers()
       .then((data) => {
         this.setState({
           users: data.users,

@@ -3,7 +3,7 @@ import UserDetailSection from '../components/UserDetailSection';
 import CommentSection from '../components/CommentSection';
 import FormWrapper from '../components/FormWrapper';
 import objectAssign from 'object-assign';
-import formHelpers from '../utils/FormHelpers';
+import formSubmitHelpers from '../utils/FormSubmitHelper';
 
 // Stateful Container Component for handling the data and behaviour of our form
 export default class FormContainer extends Component {
@@ -78,7 +78,7 @@ export default class FormContainer extends Component {
 
     // We post our form data and if we get an ok response then we change route to
     // Thank you page
-    formHelpers.postFormData(this.state.fieldValues)
+    formSubmitHelpers.postFormData(this.state.fieldValues)
       .then((response) => {
         if (response.result === 'ok') {
           // We grab router from our context type and call push method to change routes
