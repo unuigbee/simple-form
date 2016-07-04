@@ -1,7 +1,7 @@
 # simple-form
 
 A multi-step form application using React with Codeigniter as the backend implementation. Of course you can use any backend technology.
-Includes examples creating components using es6 code styling, routing using React Router, data fetching using Axios and CSS scoping using CSS modules with Webpack. 
+Includes examples creating components using es6 syntax, routing using React Router, data fetching using Axios and CSS scoping using CSS modules with Webpack. 
 
 ## Installation
 1. Clone the repository to your server web space 
