@@ -1,6 +1,6 @@
 # simple-form
 
-A multi-step form application using React with Codeigniter as the backend implementation. Of course you can use any backend technology
+A multi-step form application using React with Codeigniter as the backend implementation. Of course you can use any backend technology.
 
 ## Installation
 1. Clone the repository to your server web space 
@@ -10,5 +10,6 @@ A multi-step form application using React with Codeigniter as the backend implem
 5. run **npm start** to get webpack dev server running or **webpack-dev-server --host www.example.com --port 80** if you want some flexibility 
 
 ## To Do
-- [ ] Add styling using SASS like preprocessor using PostCSS and plugin friends 
+- [ ] Improve and add styling using SASS like preprocessor from PostCSS and plugin friends 
 - [ ] Make Url endpoints more REST like 
+- [ ] Improve documentation
