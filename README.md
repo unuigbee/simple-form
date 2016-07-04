@@ -1,7 +1,7 @@
 # simple-form
 
 A multi-step form application using React with Codeigniter as the backend implementation. Of course you can use any backend technology.
-Includes examples of routing using React Router and data fetching using Axios (A Promise based HTTP client for the browser and node.js). 
+Includes examples of routing using React Router, data fetching using Axios and CSS scoping using CSS moduels with webpack. 
 
 ## Installation
 1. Clone the repository to your server web space 
@@ -12,6 +12,6 @@ Includes examples of routing using React Router and data fetching using Axios (A
 
 ## To Do
 - [ ] Add client side form validation
-- [ ] Improve and add styling using SASS like preprocessor from PostCSS and plugin friends 
+- [ ] Refine CSS styles and add styling using SASS like preprocessor from PostCSS and plugin friends 
 - [ ] Make Url endpoints more REST like 
 - [ ] Improve documentation
