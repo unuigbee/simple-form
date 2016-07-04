@@ -12,6 +12,7 @@ Includes examples of routing using React Router, data fetching using Axios and C
 
 ## To Do
 - [ ] Add client side form validation
+- [ ] Improve reusability of components
 - [ ] Refine CSS styles and add styling using SASS like preprocessor from PostCSS and plugin friends 
 - [ ] Make Url endpoints more REST like 
 - [ ] Improve documentation
