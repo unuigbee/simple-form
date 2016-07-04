@@ -34,14 +34,13 @@ class Form_entry extends CI_Controller {
 
   public function get_users() {
     // A restful library would have been more appropriate but since we are handling a single resource
-    // We'll omit it
     $data = $this->form_entry_model->get_users();
     $info = new stdClass();
 
     // If our returned data set is not empty we set status header to ok
     // We store our data within the info object and then JSON encode our information
     // Else we send back an error with a useful error message
-    if (!empty($get_users)) {
+    if (!empty($data)) {
 
       $this->output->set_content_type('application/json');
       $this->output->set_status_header('200');
