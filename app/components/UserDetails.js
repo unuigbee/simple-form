@@ -1,15 +1,17 @@
 import React from 'react';
 
+// Our UserDetails stateless component for listing users details
 const UserDetails = (props) => {
   return (
-    <div>
-      <li>Firstname: </li>
-      <li>Lastname: </li>
-      <li>Email Adress: </li>
-      <li>Telephone: </li>
-      <li>Gender: </li>
-      <li>Comments: </li>
-      <li>Extra Comments: </li>
-    </div>
+    <ul>
+      <li>Firstname: {props.user.firstname}</li>
+      <li>Surname: {props.user.surname}</li>
+      <li>Email Adress: {props.user.email}</li>
+      <li>Telephone: {props.user.telephone}</li>
+      <li>Gender: {props.user.gender}</li>
+      <li>Comments: {props.user.comments}</li>
+      <li>Extra Comments: {props.user.more_comments}</li>
+    </ul>
   );
-}
+};
+export default UserDetails;
