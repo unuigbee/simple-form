@@ -27,4 +27,15 @@ class Form_entry_model extends CI_Model {
     return $this->db->insert('data_entry', $data);
 
   }
+
+  public function get_users() {
+    // Here we make a select query on the data_entry table
+    $query = $this->db->get('data_entry');
+
+    // We then return the data as array of records
+    // Returns an array of objects on success or empty array on failure
+    $data = $query->result();
+
+    return $data;
+  }
 }

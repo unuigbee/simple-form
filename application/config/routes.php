@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // routes a URL pattern of form_entry/create to our create method of our form_entry controller
 $route['form_entry/create'] = 'form_entry/create';
+$route['form_entry/getusers'] = 'form_entry/get_users';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
