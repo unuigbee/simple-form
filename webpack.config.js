@@ -1,10 +1,10 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// The plugin configuration sets /app/index.html as a template and creates a brand new index.html
+// The plugin configuration sets /client/index.html as a template and creates a brand new index.html
 // file in the /dist folder.
 // The new index.html file is injected a script tag referencing our index_bundle.js in the <body> tag
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/app/index.html',
+  template: __dirname + '/client/index.html',
   filename: 'index.html',
   inject: 'body',
 });
@@ -12,7 +12,7 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
     // We first tell Webpack where the entry point/code for our app is located
   entry: [
-    './app/index.js',
+    './client/index.js',
   ],
   output: {
     // Sets the filename and destination of our transformed code
