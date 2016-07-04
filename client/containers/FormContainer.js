@@ -3,7 +3,7 @@ import UserDetailSection from '../components/UserDetailSection';
 import CommentSection from '../components/CommentSection';
 import FormWrapper from '../components/FormWrapper';
 import objectAssign from 'object-assign';
-import formSubmitHelpers from '../utils/FormSubmitHelper';
+import formSubmitHelpers from '../utils/FormHelpers';
 
 // Stateful Container Component for handling the data and behaviour of our form
 export default class FormContainer extends Component {

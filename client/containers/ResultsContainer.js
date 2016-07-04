@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Results from '../components/Results';
-import formSubmitHelpers from '../utils/FormSubmitHelper';
+import formSubmitHelpers from '../utils/FormHelpers';
 
 export default class ResultsContainer extends Component {
   constructor(props) {
