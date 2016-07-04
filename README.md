@@ -11,6 +11,7 @@ Includes examples of routing using React Router and data fetching using Axios (A
 5. run **npm start** to get webpack dev server running or **webpack-dev-server --host www.example.com --port 80** if you want some flexibility 
 
 ## To Do
+- [ ] Add client side form validation
 - [ ] Improve and add styling using SASS like preprocessor from PostCSS and plugin friends 
 - [ ] Make Url endpoints more REST like 
 - [ ] Improve documentation
