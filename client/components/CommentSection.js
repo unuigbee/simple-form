@@ -44,17 +44,19 @@ const CommentSection = (props) => {
 {/* Here we access the properties passed down from our FormContainer component*/}
         <p>{props.headerTitle}</p>
       </header>
-      <div className="container">
+      <div className="row">
         <ToggleDisplay show={props.show}>
-          <textarea
-            className={styles.form_textarea}
-            name={props.name}
-            cols="90"
-            rows="4" value={props.comments}
-            onChange={props.onFieldChange}
-          >
-          </textarea>
-          {buttonType}
+          <fieldset className={styles.form_fieldset}>
+            <textarea
+              className={styles.form_textarea}
+              name={props.name}
+              cols="99"
+              rows="4" value={props.comments}
+              onChange={props.onFieldChange}
+            >
+            </textarea>
+            <div>{buttonType}</div>
+          </fieldset>
         </ToggleDisplay>
       </div>
     </section>

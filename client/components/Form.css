@@ -9,7 +9,8 @@
 .form_input {
   display: block;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  margin-right: 10px;
 }
 
 .form_radio_label {
@@ -17,17 +18,17 @@
 }
 
 .form_button {
-  display: block;
   color: white;
   background-color: #5353AA;
   border-style: none;
   border-radius: 8px;
   padding: 4px 33px 4px 33px;
-  margin-bottom: 5px;
+  float: right;
 }
 
 .form_fieldset {
-  width: 300px;
+  padding:10px 25px 10px 25px;
+  margin-bottom: 6px;
 }
 
 .form_textarea {
@@ -37,5 +38,5 @@
 .form_section {
   background-color: #eee;
   border-radius: 7px;
-  margin-bottom: 6px;
+    margin-bottom: 10px;
 }

@@ -8,7 +8,7 @@ import FormContainer from '../containers/FormContainer';
 const Home = (props) => {
   return (
     <div>
-      <div className="jumbotron col-sm-12 text-center">
+      <div className="jumbotron text-center">
         <h1>Simple Form</h1>
         <p>Is it really that simple?</p>
         {/* We use Link to route the browser to the results page on button click */}

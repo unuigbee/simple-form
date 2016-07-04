@@ -17,78 +17,78 @@ const UserDetailSection = (props) => {
       </header>
 {/* Toggle Display component alllows us to toggle the display of it's children */}
       <ToggleDisplay show={props.show}>
-        <div className="container">
-          <fieldset>
-            <div className="row">
-              <div className="col-md-3">
-                <label>Firstname
-                  <input
-                    className={styles.form_input}
-                    type="text"
-                    name="firstname"
-                    value={props.fieldValues.firstname}
-                    onChange={props.onFieldChange}
-                  />
-                </label>
-              </div>
-              <div className="col-md-3">
-                <label>Surname
-                  <input
-                    className={styles.form_input}
-                    type="text"
-                    name="surname"
-                    value={props.fieldValues.surname}
-                    onChange={props.onFieldChange}
-                  />
-                </label>
-              </div>
+        <fieldset className={styles.form_fieldset}>
+          <div className="row">
+            <div className="col-md-4">
+              <label>Firstname
+                <input
+                  className={styles.form_input}
+                  type="text"
+                  name="firstname"
+                  value={props.fieldValues.firstname}
+                  onChange={props.onFieldChange}
+                />
+              </label>
             </div>
-            <div className="row">
-              <div className="col-md-3">
-                <label>Email Address
-                  <input
-                    className={styles.form_input}
-                    type="email"
-                    name="email"
-                    value={props.fieldValues.email}
-                    onChange={props.onFieldChange}
-                  />
-                </label>
-              </div>
-              <div className="col-md-3">
-                <label>Telephone Nom.
-                  <input
-                    className={styles.form_input}
-                    type="text" name="telephone"
-                    onChange={props.onFieldChange}
-                    value={props.fieldValues.telephone}
-                  />
-                </label>
-              </div>
+            <div className="col-md-4">
+              <label>Surname
+                <input
+                  className={styles.form_input}
+                  type="text"
+                  name="surname"
+                  value={props.fieldValues.surname}
+                  onChange={props.onFieldChange}
+                />
+              </label>
             </div>
-            <label>Gender
-    {/* We use RadioGroup component to easily set checked value and retrieve selected value from onChange events*/ }
-              <RadioGroup
-                className={styles.form_input}
-                name="gender"
-                selectedValue={props.fieldValues.gender}
-                onChange={props.onFieldChange}
-              >
-                <label className={styles.form_radio_label}>
-                  <Radio value="male" />Male
-                </label>
-                <label className={styles.form_radio_label}>
-                  <Radio value="female" />Female
-                </label>
-              </RadioGroup>
-            </label>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <label>Email Address
+                <input
+                  className={styles.form_input}
+                  type="email"
+                  name="email"
+                  value={props.fieldValues.email}
+                  onChange={props.onFieldChange}
+                />
+              </label>
+            </div>
+            <div className="col-md-4">
+              <label>Telephone Nom.
+                <input
+                  className={styles.form_input}
+                  type="text" name="telephone"
+                  onChange={props.onFieldChange}
+                  value={props.fieldValues.telephone}
+                />
+              </label>
+            </div>
+          </div>
+          <label>Gender
+  {/* We use RadioGroup component to easily set checked value and retrieve selected value from onChange events*/ }
+            <RadioGroup
+              className={styles.form_input}
+              name="gender"
+              selectedValue={props.fieldValues.gender}
+              onChange={props.onFieldChange}
+            >
+              <label className={styles.form_radio_label}>
+                <Radio value="male" />Male
+              </label>
+              <label className={styles.form_radio_label}>
+                <Radio value="female" />Female
+              </label>
+            </RadioGroup>
+          </label>
+          <div>
             <button
               className={styles.form_button}
               type="button" onClick={props.onNextStep}>
               {props.buttonText}
             </button>
-          </fieldset>
-        </div>
+          </div>
+        </fieldset>
       </ToggleDisplay>
     </section>
   );
