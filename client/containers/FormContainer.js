@@ -103,6 +103,7 @@ export default class FormContainer extends Component {
           show={this.state.isStepOne}
         />
         <CommentSection
+          currentStep={this.state.step}
           headerTitle="Step 2: More comments"
           buttonText="Next >"
           name="comments"
@@ -112,6 +113,7 @@ export default class FormContainer extends Component {
           show={this.state.isStepTwo}
         />
         <CommentSection
+          currentStep={this.state.step}
           headerTitle="Step 3: Final comments"
           buttonText="Next >"
           name="morecomments"

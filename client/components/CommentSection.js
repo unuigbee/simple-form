@@ -27,8 +27,19 @@ const CommentSection = (props) => {
   );
   }
 
+  // Here we conditionally set our form section style based on the current step
+  // and whether that form section is displayed/shown
+  let styleformSection = '';
+  if (props.show && props.currentStep == 2) {
+    styleformSection = styles.form_section;
+  }
+
+  if (props.show && props.currentStep == 3) {
+    styleformSection = styles.form_section;
+  }
+
   return (
-    <section className={styles.form_section}>
+    <section className={styleformSection}>
       <header className={styles.section_header}>
 {/* Here we access the properties passed down from our FormContainer component*/}
         <p>{props.headerTitle}</p>
