@@ -96,15 +96,15 @@ export default class FormContainer extends Component {
       <FormWrapper onSubmitForm={this.handleSubmitForm}>
         <UserDetailSection
           headerTitle="Step 1: Your details"
-          buttonText="Next"
+          buttonText="Next >"
           fieldValues={this.state.fieldValues}
           onFieldChange={this.handleFieldChange}
           onNextStep={this.handleNextStep}
           show={this.state.isStepOne}
         />
         <CommentSection
-          headerTitle="Step 2: Comments"
-          buttonText="Next"
+          headerTitle="Step 2: More comments"
+          buttonText="Next >"
           name="comments"
           comments={this.state.fieldValues.comments}
           onFieldChange={this.handleFieldChange}
@@ -112,8 +112,8 @@ export default class FormContainer extends Component {
           show={this.state.isStepTwo}
         />
         <CommentSection
-          headerTitle="Step 3: More comments"
-          buttonText="Next"
+          headerTitle="Step 3: Final comments"
+          buttonText="Next >"
           name="morecomments"
           comments={this.state.fieldValues.morecomments}
           onFieldChange={this.handleFieldChange}

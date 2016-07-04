@@ -4,7 +4,7 @@ import React from 'react';
 const FormWrapper = (props) => {
   return (
     <div className="container">
-      <div className="col-md-10">
+      <div className="col-md-8">
         <form onSubmit={props.onSubmitForm}>
           {props.children}
         </form>

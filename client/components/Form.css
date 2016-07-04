@@ -1,0 +1,41 @@
+.section_header {
+  background-color: orange;
+  padding: 10px 10px 4px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.form_input {
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.form_radio_label {
+  margin-right: 10px;
+}
+
+.form_button {
+  display: block;
+  color: white;
+  background-color: #5353AA;
+  border-style: none;
+  border-radius: 8px;
+  padding: 4px 33px 4px 33px;
+  margin-bottom: 5px;
+}
+
+.form_fieldset {
+  width: 300px;
+}
+
+.form_textarea {
+  border-radius: 5px;
+}
+
+.form_section {
+  background-color: #eee;
+  border-radius: 7px;
+  margin-bottom: 6px;
+}

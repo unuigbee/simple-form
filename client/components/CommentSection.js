@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 import ToggleDisplay from 'react-toggle-display';
+import styles from './Form.css';
+// Our styles are scoped to our components using CSSmodules
 
 const CommentSection = (props) => {
   let buttonType;
@@ -7,27 +9,43 @@ const CommentSection = (props) => {
   // buttonType is conditionally assigned a button or input button component based on whether
   // there is a next step or last step (last step is submitting the form)
   if (props.onNextStep) {
-    buttonType = <button type="button" onClick={props.onNextStep}> {props.buttonText} </button>;
+    buttonType = (
+      <button
+        type="button"
+        className={styles.form_button}
+        onClick={props.onNextStep}>
+        {props.buttonText}
+      </button>
+    );
   } else {
-    buttonType = <input type="submit" value={props.buttonText} />;
+    buttonType = (
+      <input
+        type="submit"
+        className={styles.form_button}
+        value={props.buttonText}
+      />
+  );
   }
 
   return (
-    <section>
-      <header>
+    <section className={styles.form_section}>
+      <header className={styles.section_header}>
 {/* Here we access the properties passed down from our FormContainer component*/}
         <p>{props.headerTitle}</p>
       </header>
-      <ToggleDisplay show={props.show}>
-        <textarea
-          name={props.name}
-          cols="100"
-          rows="4" value={props.comments}
-          onChange={props.onFieldChange}
-        >
-        </textarea>
-        {buttonType}
-      </ToggleDisplay>
+      <div className="container">
+        <ToggleDisplay show={props.show}>
+          <textarea
+            className={styles.form_textarea}
+            name={props.name}
+            cols="90"
+            rows="4" value={props.comments}
+            onChange={props.onFieldChange}
+          >
+          </textarea>
+          {buttonType}
+        </ToggleDisplay>
+      </div>
     </section>
   );
 };
