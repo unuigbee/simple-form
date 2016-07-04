@@ -38,24 +38,6 @@ CREATE TABLE `data_entry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `data_entry`
---
-
-INSERT INTO `data_entry` (`id`, `firstname`, `surname`, `email`, `telephone`, `gender`, `comments`, `more_comments`) VALUES
-(27, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'SADasdsadsadasdasdasdasddsddasdasddasdasdsadasdasdasdasdasdasda', 'dsadsadsadasdasdasdasdasdasdasdasdasdsadas'),
-(28, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'Good day mate', 'Nice Work Dude'),
-(29, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'female', 'Good day sir', 'Lovely day man'),
-(30, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'David and goliath who needs', 'When the hens quack'),
-(31, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'sadsadsadasdasdsadas', 'dasdasdasdasdsadasdasdasdasd'),
-(32, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'ddsdsadsadasdasdasdsadasdsadc', 'dsadsadasdasdsdsadasdasdasdsadasdasdasdas'),
-(33, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'dasdasdasdsadasdas', 'dsadasdsadsadasdasdasdasd'),
-(34, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'Damien I love is my name ', 'dasdasdasdas'),
-(35, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'dsad', 'dasdasdsadasda'),
-(36, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'dsadasdsadas', 'dsadasdsadsadas'),
-(37, 'Emmanuel', 'Unuigbe', 'eunuigbee@gmail.com', '07939677156', 'male', 'Danger stranger', 'Danger stranger mayber');
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `migrations`
 --
