@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 // import the FormContainer to compose with our Home Component
 import FormContainer from '../containers/FormContainer';
 
@@ -10,6 +11,12 @@ const Home = (props) => {
       <div className="jumbotron col-sm-12 text-center">
         <h1>Simple Form</h1>
         <p>Is it really that simple?</p>
+        {/* We use Link to route the browser to the results page on button click */}
+        <Link to="results">
+          <button type="button" className="btn btn-lg btn-success">
+            View Users
+          </button>
+        </Link>
       </div>
       <FormContainer />
     </div>
