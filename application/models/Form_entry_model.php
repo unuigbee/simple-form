@@ -18,6 +18,7 @@ class Form_entry_model extends CI_Model {
       'surname' => $this->input->post('surname'),
       'email' => $this->input->post('email'),
       'telephone' => $this->input->post('telephone'),
+      'date_of_birth' => $this->input->post('dateofbirth'),
       'gender' => $this->input->post('gender'),
       'comments' => $this->input->post('comments'),
       'more_comments' => $this->input->post('morecomments')
