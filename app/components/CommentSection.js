@@ -4,6 +4,8 @@ import ToggleDisplay from 'react-toggle-display';
 const CommentSection = (props) => {
   let buttonType;
 
+  // buttonType is conditionally assigned a button or input button component based on whether
+  // there is a next step or last step (last step is submitting the form)
   if (props.onNextStep) {
     buttonType = <button type="button" onClick={props.onNextStep}> {props.buttonText} </button>;
   } else {

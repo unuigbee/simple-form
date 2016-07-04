@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import UserDetailSection from '../components/UserDetailSection';
 import CommentSection from '../components/CommentSection';
 import FormWrapper from '../components/FormWrapper';
@@ -9,6 +9,7 @@ import formSubmitHelpers from '../utils/FormSubmitHelper';
 export default class FormContainer extends Component {
   constructor(props) {
     super(props);
+    // Set our initial state
     this.state = {
       step: 1,
       fieldValues: {
@@ -18,7 +19,7 @@ export default class FormContainer extends Component {
         telephone: '',
         gender: 'male',
         comments: '',
-        moreComments: '',
+        morecomments: '',
       },
       isStepOne: true,
       isStepTwo: false,
@@ -40,14 +41,15 @@ export default class FormContainer extends Component {
       const eventValue = event;
       nextState.gender = eventValue;
     } else {
-      // Gets the name and value attribute of target element and creates a key value
+      // Gets the name and value attribute of target element (e.g. input) and creates a key value
       // pair of both attributes
+      // This also allows us to have one event handler for every input change event
       nextState[event.target.name] = event.target.value;
     }
 
     // To avoid mutating state directly we use objectAssign to make a
     // shallow copy of our components state with the next state merged in.
-    // We then use setState to make internal state changes
+    // We then use setState to make internal state changes.
     const updatedFieldValues = objectAssign({}, this.state.fieldValues, nextState);
     this.setState({ fieldValues: updatedFieldValues });
   }
@@ -70,10 +72,22 @@ export default class FormContainer extends Component {
       this.setState({ isStepThree: true, isStepTwo: false });
     }
   }
-
+  // handles submission of our form
   handleSubmitForm(event) {
     event.preventDefault();
-    formSubmitHelpers.postFormData(this.state.fieldValues);
+
+    // We post our form data and if we get an ok response then we change route to
+    // Thank you page
+    formSubmitHelpers.postFormData(this.state.fieldValues)
+      .then((response) => {
+        if (response.result === 'ok') {
+          // We grab router from our context type and call push method to change routes
+          // to Thank You page/route
+          this.context.router.push({
+            pathname: '/thankYou',
+          });
+        }
+      });
   }
 
   // Our render method returns a tree of components, passing properties down to those components
@@ -100,8 +114,8 @@ export default class FormContainer extends Component {
         <CommentSection
           headerTitle="Step 3: More comments"
           buttonText="Next"
-          name="moreComments"
-          comments={this.state.fieldValues.moreComments}
+          name="morecomments"
+          comments={this.state.fieldValues.morecomments}
           onFieldChange={this.handleFieldChange}
           show={this.state.isStepThree}
         />
@@ -109,3 +123,6 @@ export default class FormContainer extends Component {
     );
   }
 }
+// We set router as a property of our component's contextType so we don't have to pass router as
+// props down to our Form Container Component.
+FormContainer.contextTypes = { router: PropTypes.object.isRequired };

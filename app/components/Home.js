@@ -2,9 +2,9 @@ import React from 'react';
 // import the FormContainer to compose with our Home Component
 import FormContainer from '../containers/FormContainer';
 
-// Our Home Component for our initial page
+// Home Component as initial Home page
 // Stateless functional component that returns a description of a HTML tree
-const Home = () => {
+const Home = (props) => {
   return (
     <div>
       <div className="jumbotron col-sm-12 text-center">

@@ -1,8 +1,11 @@
 // React namespace is neccessary to import because the transformed JSX syntax into JS code by Babel
 // uses the React namespace to create these elements e.g. React.createElement(element, children, ..)
 import React, { PropTypes } from 'react';
+
 // import the Radio Group module for managing radio groups
 import { RadioGroup, Radio } from 'react-radio-group';
+
+// import the Toggle Display module to easily toggle our form sections between show and hide
 import ToggleDisplay from 'react-toggle-display';
 
 const UserDetailSection = (props) => {
@@ -11,6 +14,7 @@ const UserDetailSection = (props) => {
       <header>
         <p>{props.headerTitle}</p>
       </header>
+{/* Toggle Display component alllows us to toggle the display of it's children */}
       <ToggleDisplay show={props.show}>
         <fieldset>
           <label>Firstname:

@@ -31,9 +31,8 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-radio-group": "^3.0.1",
-    "react-router": "^2.5.1",
-    "react-toggle-display": "^2.0.2",
-    "webpack": "^1.13.1"
+    "react-router": "^2.5.2",
+    "react-toggle-display": "^2.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
