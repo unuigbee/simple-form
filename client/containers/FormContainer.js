@@ -20,6 +20,7 @@ export default class FormContainer extends Component {
         gender: 'male',
         comments: '',
         morecomments: '',
+        dateofbirth: '',
       },
       isStepOne: true,
       isStepTwo: false,

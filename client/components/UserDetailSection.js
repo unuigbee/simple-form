@@ -65,6 +65,16 @@ const UserDetailSection = (props) => {
               </label>
             </div>
           </div>
+          <div>
+            <label>Date of Birth
+              <input
+                className={styles.form_input}
+                type="text" name="dateofbirth"
+                onChange={props.onFieldChange}
+                value={props.fieldValues.telephone}
+              />
+            </label>
+          </div>
           <label>Gender
   {/* We use RadioGroup component to easily set checked value and retrieve selected value from onChange events*/ }
             <RadioGroup
