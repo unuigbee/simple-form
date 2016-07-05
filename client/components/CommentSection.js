@@ -14,7 +14,7 @@ const CommentSection = (props) => {
         type="button"
         className={styles.form_button}
         onClick={props.onNextStep}>
-        {props.buttonText}
+        Next >
       </button>
     );
   } else {
@@ -22,7 +22,7 @@ const CommentSection = (props) => {
       <input
         type="submit"
         className={styles.form_button}
-        value={props.buttonText}
+        value="Next >"
       />
   );
   }

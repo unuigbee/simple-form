@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 // import the FormContainer to compose with our Home Component
-import FormContainer from '../containers/FormContainer';
+import Formous from '../containers/FormContainer';
 
 // Home Component as initial Home page
 // Stateless functional component that returns a description of a HTML tree
@@ -18,7 +18,7 @@ const Home = (props) => {
           </button>
         </Link>
       </div>
-      <FormContainer />
+      <Formous />
     </div>
   );
 };

@@ -5,9 +5,7 @@ const FormWrapper = (props) => {
   return (
     <div>
       <div className="col-md-8">
-        <form onSubmit={props.onSubmitForm}>
-          {props.children}
-        </form>
+        {props.children}
       </div>
     </div>
   );

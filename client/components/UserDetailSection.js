@@ -69,7 +69,7 @@ const UserDetailSection = (props) => {
             <label>Date of Birth
               <input
                 className={styles.form_input}
-                type="text" name="dateofbirth"
+                type="date" name="dateofbirth"
                 onChange={props.onFieldChange}
                 value={props.fieldValues.dateofbirth}
               />
@@ -95,7 +95,7 @@ const UserDetailSection = (props) => {
             <button
               className={styles.form_button}
               type="button" onClick={props.onNextStep}>
-              {props.buttonText}
+              Next >
             </button>
           </div>
         </fieldset>

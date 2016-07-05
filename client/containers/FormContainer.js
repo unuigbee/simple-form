@@ -1,12 +1,21 @@
 import React, { Component, PropTypes } from 'react';
+import Formous from 'formous';
+import objectAssign from 'object-assign';
 import UserDetailSection from '../components/UserDetailSection';
 import CommentSection from '../components/CommentSection';
 import FormWrapper from '../components/FormWrapper';
-import objectAssign from 'object-assign';
 import formSubmitHelpers from '../utils/FormHelpers';
 
+const ErrorText = (props) => {
+  return (
+    <div style={{ color: '#f00' }}>
+      {props.errorText}
+    </div>
+  );
+};
+
 // Stateful Container Component for handling the data and behaviour of our form
-export default class FormContainer extends Component {
+class FormContainer extends Component {
   constructor(props) {
     super(props);
     // Set our initial state
@@ -74,9 +83,12 @@ export default class FormContainer extends Component {
     }
   }
   // handles submission of our form
-  handleSubmitForm(event) {
+  handleSubmitForm(formStatus) {
     event.preventDefault();
-
+    if (!formStatus.touched) {
+      alert('Please fill out the form.');
+      return;
+    }
     // We post our form data and if we get an ok response then we change route to
     // Thank you page
     formSubmitHelpers.postFormData(this.state.fieldValues)
@@ -93,39 +105,60 @@ export default class FormContainer extends Component {
 
   // Our render method returns a tree of components, passing properties down to those components
   render() {
+    const {
+      fields: {  },
+      formSubmit,
+    } = this.props;
+
     return (
-      <FormWrapper onSubmitForm={this.handleSubmitForm}>
-        <UserDetailSection
-          headerTitle="Step 1: Your details"
-          buttonText="Next >"
-          fieldValues={this.state.fieldValues}
-          onFieldChange={this.handleFieldChange}
-          onNextStep={this.handleNextStep}
-          show={this.state.isStepOne}
-        />
-        <CommentSection
-          currentStep={this.state.step}
-          headerTitle="Step 2: More comments"
-          buttonText="Next >"
-          name="comments"
-          comments={this.state.fieldValues.comments}
-          onFieldChange={this.handleFieldChange}
-          onNextStep={this.handleNextStep}
-          show={this.state.isStepTwo}
-        />
-        <CommentSection
-          currentStep={this.state.step}
-          headerTitle="Step 3: Final comments"
-          buttonText="Next >"
-          name="morecomments"
-          comments={this.state.fieldValues.morecomments}
-          onFieldChange={this.handleFieldChange}
-          show={this.state.isStepThree}
-        />
+      <FormWrapper>
+        <form onSubmit={formSubmit(this.handleSubmitForm)}>
+          <UserDetailSection
+            headerTitle="Step 1: Your details"
+            fieldValues={this.state.fieldValues}
+            onFieldChange={this.handleFieldChange}
+            onNextStep={this.handleNextStep}
+            show={this.state.isStepOne}
+          />
+          <CommentSection
+            currentStep={this.state.step}
+            headerTitle="Step 2: More comments"
+            name="comments"
+            comments={this.state.fieldValues.comments}
+            onFieldChange={this.handleFieldChange}
+            onNextStep={this.handleNextStep}
+            show={this.state.isStepTwo}
+          />
+          <CommentSection
+            currentStep={this.state.step}
+            headerTitle="Step 3: Final comments"
+            name="morecomments"
+            comments={this.state.fieldValues.morecomments}
+            onFieldChange={this.handleFieldChange}
+            show={this.state.isStepThree}
+          />
+        </form>
       </FormWrapper>
     );
   }
 }
+
+const fields = {
+  dateofbirth: {
+    tests: [
+      {
+        critical: true,
+        failProps: {
+          errorText: 'Age should be a number.',
+        },
+        test(value) {
+          return /^\d*$/.test(value);
+        },
+      },
+    ],
+  },
+};
 // We set router as a property of our component's contextType so we don't have to pass router as
 // props down to our Form Container Component.
 FormContainer.contextTypes = { router: PropTypes.object.isRequired };
+export default Formous(fields)(FormContainer);
